@@ -1,10 +1,12 @@
-from django.urls import path
-from . import views
+
+from django.contrib import admin
+from django.urls import path, include
+
 
 urlpatterns = [
-    #path('', views.home),
-    path('register/', views.registerpage,name= 'registerpage'),
-    path('login/' , views.loginpage, name= 'loginpage'),  
+    path('admin/', admin.site.urls),
+    path('' , include('taskmate_app.urls')),
+
     
 
 ]
